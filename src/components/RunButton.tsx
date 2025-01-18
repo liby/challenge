@@ -2,7 +2,7 @@ interface RunButtonProps {
   onRun: () => void;
 }
 
-export function RunButton({ onRun }: RunButtonProps) {
+export const RunButton = ({ onRun }: RunButtonProps) => {
   const runFlow = () => {
     console.log("Running flow...");
     onRun();

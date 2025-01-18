@@ -1,23 +1,45 @@
-import type { NodeTypes } from "@xyflow/react";
+import { type NodeTypes } from "@xyflow/react";
 
-import { AppNode } from "./types";
+import { DiffInputNode } from "../components/DiffInputNode";
+import { ConfigNode } from "../components/ConfigNode";
+import { PromptNode } from "../components/PromptNode";
+import { type AppNode } from "./types";
 
 export const initialNodes: AppNode[] = [
   {
-    id: "a",
-    type: "input",
-    position: { x: 0, y: 0 },
-    data: { label: "step 1" },
+    id: 'diff',
+    type: 'diff',
+    dragHandle: '.custom-drag-handle',
+    data: {
+      diff: '',
+    },
+    position: { x: 5, y: 70 },
   },
-  { id: "c", position: { x: 100, y: 100 }, data: { label: "step 2" } },
   {
-    id: "d",
-    type: "output",
-    position: { x: 0, y: 200 },
-    data: { label: "step 3" },
+    id: 'config',
+    type: 'config',
+    dragHandle: '.custom-drag-handle',
+    data: {
+      useConventional: true,
+      maxLength: 100,
+      detailed: true,
+      language: 'en',
+    },
+    position: { x: 250, y: 500 },
+  },
+  {
+    id: 'prompt',
+    type: 'prompt',
+    dragHandle: '.custom-drag-handle',
+    data: {
+      prompt: '',
+    },
+    position: { x: 850, y: 250 },
   },
 ];
 
 export const nodeTypes = {
-  // Add any of your custom nodes here!
+  diff: DiffInputNode,
+  config: ConfigNode,
+  prompt: PromptNode,
 } satisfies NodeTypes;

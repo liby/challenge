@@ -1,4 +1,4 @@
-export function Logo() {
+export const Logo = () => {
   return (
     <div className="absolute top-4 left-4 z-50">
       <img
@@ -8,4 +8,4 @@ export function Logo() {
       />
     </div>
   );
-} 
+}

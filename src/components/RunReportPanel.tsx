@@ -3,7 +3,7 @@ interface RunReportPanelProps {
   onClose: () => void;
 }
 
-export function RunReportPanel({ isOpen, onClose }: RunReportPanelProps) {
+export const RunReportPanel = ({ isOpen, onClose }: RunReportPanelProps) => {
   return (
     <div
       className={`fixed top-20 right-4 h-[90vh] w-96 bg-white border border-gray-200 rounded-lg transform transition-transform duration-300 ease-in-out ${
