@@ -1,31 +1,47 @@
+# Gumloop Coding Challenge - AI Commit Message Generator
+
+A visual tool that helps developers generate better git commit messages using AI. Built with React Flow and Google's Gemini AI.
+
 ![UI Preview](public/images/ui_preview.png)
 
-# Gumloop Coding Challenge
+## Features
 
-👋
-
-This is an open-ended challenge. The general goal is to make the flow do something useful when you click the 'Run Flow' button. It's totally up to you how simple or complex you want to make it.
-
-Feel free to set things up however you want. Honestly feel free to not even use this repo and start from scratch if you'd like.
-
-Also check out [react flow here](https://reactflow.dev/), it's an awesome project.
+- Visual node-based interface for configuring commit message generation
+- Supports both Conventional Commits and free-form formats
+- Customizable message length and detail level
+- Supports both English and Chinese languages
+- Real-time prompt preview
 
 ## Getting Started
 
-1. Clone this repository
+1. Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
 
-2. Install dependencies:
+2. Clone this repository
 
-```bash
-npm install # or `pnpm install` or `yarn install`
-```
-
-3. Start the development server:
+3. Copy the environment file and add your API key:
 
 ```bash
-npm run dev
+cp .env.example .env.local
 ```
 
-## Submission
+4. Install dependencies:
 
-Include a link to your repo in your submission or give https://github.com/rbehal access. Email us at founders@gumloop.com if you have any issues.
+```bash
+pnpm install
+```
+
+5. Start the development server:
+
+```bash
+pnpm dev
+```
+
+## Usage
+
+1. Paste your git diff in the input node (use `git diff --staged | pbcopy` to copy staged changes)
+
+2. Configure your preferences in the config node
+
+3. Click "Generate Commit" to create your commit message
+
+4. Copy the generated message to use in your commit
